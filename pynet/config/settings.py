@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
-    'djoser'
+    'rest_framework',
+    'djoser',
     'profiles',
 
 ]
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pynet',
+        'NAME': 'pynetpy',
         'USER': 'postgres',
         'PASSWORD': '12345qwe',
         'HOST': 'localhost',
@@ -137,5 +137,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JWT',)
+    # 'AUTH_HEADER_TYPES': ('JWT',)
 }
+
+
+AUTH_USER_MODEL = 'profiles.UserNet'
