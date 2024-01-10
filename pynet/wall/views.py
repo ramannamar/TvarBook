@@ -1,7 +1,7 @@
 from rest_framework import permissions, generics
+from basse.classes import CreateUpdateDestroy, CreateRetrieveUpdateDestroy
+from basse.permissions import IsAuthor
 
-from ..base.classes import CreateUpdateDestroy, CreateRetrieveUpdateDestroy
-from ..base.permissions import IsAuthor
 from .models import Post, Comment
 from .serializers import (PostSerializer, ListPostSerializer, CreateCommentSerializer)
 
