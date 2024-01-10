@@ -3,7 +3,7 @@ from .models import UserNet
 
 
 class GetUserNetSerializer(serializers.ModelSerializer):
-    """ Вывод инфо о user
+    """ Displaying user information
     """
     avatar = serializers.ImageField(read_only=True)
 
@@ -21,7 +21,7 @@ class GetUserNetSerializer(serializers.ModelSerializer):
 
 
 class GetUserNetPublicSerializer(serializers.ModelSerializer):
-    """ Вывод публичной инфы о user
+    """ Display public information about the user
     """
     class Meta:
         model = UserNet
@@ -36,3 +36,13 @@ class GetUserNetPublicSerializer(serializers.ModelSerializer):
             "groups",
             "user_permissions"
         )
+
+
+class UserByFollowerSerializer(serializers.ModelSerializer):
+    """ Serialization for subscribers
+    """
+    avatar = serializers.ImageField(read_only=True)
+
+    class Meta:
+        model = UserNet
+        fields = ('id', 'username', 'avatar')
