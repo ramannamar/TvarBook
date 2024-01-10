@@ -123,6 +123,34 @@ asgiref = ">=3.6"
 Django = ">=3.2"
 
 [[package]]
+name = "django-js-asset"
+version = "2.2.0"
+description = "script tag with additional attributes for django.forms.Media"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+django = ">=3.2"
+
+[package.extras]
+tests = ["coverage"]
+
+[[package]]
+name = "django-mptt"
+version = "0.15.0"
+description = "Utilities for implementing Modified Preorder Tree Traversal with your Django Models and working with trees of Model instances."
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.dependencies]
+django-js-asset = "*"
+
+[package.extras]
+tests = ["coverage", "mock-django"]
+
+[[package]]
 name = "django-rest-swagger"
 version = "2.2.0"
 description = "Swagger UI for Django REST Framework 3.5+"
@@ -500,7 +528,7 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "1f7126693c4a79a66089d8a2cff9015c79a0f81281f5725c4d705b7560befbc7"
+content-hash = "c79e1f680ecbb99da37d3b6cd5aff4808ab0289b5644819c9a533682cb5c3553"
 
 [metadata.files]
 asgiref = []
@@ -513,6 +541,8 @@ cryptography = []
 defusedxml = []
 django = []
 django-cors-headers = []
+django-js-asset = []
+django-mptt = []
 django-rest-swagger = []
 django-templated-mail = []
 djangorestframework = []
