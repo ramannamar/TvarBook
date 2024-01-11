@@ -4,7 +4,7 @@ from rest_framework.permissions import BasePermission
 
 class IsMemberGroup(BasePermission):
     """
-    Участник группы или администратор
+    Group member or admin
     """
 
     def has_object_permission(self, request, view, obj):
@@ -13,7 +13,7 @@ class IsMemberGroup(BasePermission):
 
 class IsAuthorEntry(BasePermission):
     """
-    Автор записи или администратор
+    Author of post or admin
     """
 
     def has_object_permission(self, request, view, obj):
@@ -22,7 +22,7 @@ class IsAuthorEntry(BasePermission):
 
 class IsAuthorCommentEntry(BasePermission):
     """
-    Автор комментария или администратор
+    Author of comment or admin
     """
 
     def has_object_permission(self, request, view, obj):
@@ -31,7 +31,7 @@ class IsAuthorCommentEntry(BasePermission):
 
 class IsAuthor(BasePermission):
     """
-    Автор комментария или записи
+    Author of comment or post
     """
 
     def has_permission(self, request, view):

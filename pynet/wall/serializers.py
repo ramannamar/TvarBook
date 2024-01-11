@@ -5,7 +5,7 @@ from .models import Post, Comment
 
 
 class CreateCommentSerializer(serializers.ModelSerializer):
-    """ Добавление комментариев к посту
+    """ create comment for post
     """
     class Meta:
         model = Comment
@@ -13,7 +13,7 @@ class CreateCommentSerializer(serializers.ModelSerializer):
 
 
 class ListCommentSerializer(serializers.ModelSerializer):
-    """ Список комментариев
+    """ comments list
     """
     text = serializers.SerializerMethodField()
     children = RecursiveSerializer(many=True)
@@ -31,7 +31,7 @@ class ListCommentSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    """ Вывод и редактирование поста
+    """ output and edit post
     """
     user = serializers.ReadOnlyField(source='user.username')
     comments = ListCommentSerializer(many=True, read_only=True)
@@ -43,7 +43,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 class ListPostSerializer(serializers.ModelSerializer):
-    """ Список постов
+    """ posts list
     """
     user = serializers.ReadOnlyField(source='user.username')
 

@@ -2,7 +2,7 @@ from rest_framework import generics, permissions, mixins, decorators, viewsets
 
 
 class MixedPermission:
-    """ Миксин permissions для action
+    """ Mixib permissions for action
     """
     def get_permissions(self):
         try:

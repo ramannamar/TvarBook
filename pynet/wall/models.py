@@ -27,7 +27,7 @@ class Post(models.Model):
 
 
 class Comment(AbstractComment, MPTTModel):
-    """ Модель коментариев к постам
+    """ Comment model for post
     """
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)

@@ -7,7 +7,7 @@ from .serializers import (PostSerializer, ListPostSerializer, CreateCommentSeria
 
 
 class PostListView(generics.ListAPIView):
-    """ Список постов на стене пользователя
+    """ posts list on a wall
     """
     serializer_class = ListPostSerializer
 
@@ -17,7 +17,7 @@ class PostListView(generics.ListAPIView):
 
 
 class PostView(CreateRetrieveUpdateDestroy):
-    """ CRUD поста
+    """ CRUD of post
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Post.objects.all().select_related('user').prefetch_related('comments')
