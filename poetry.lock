@@ -245,6 +245,14 @@ coreapi = ["coreapi (>=2.3.3)", "coreschema (>=0.0.4)"]
 validation = ["swagger-spec-validator (>=2.1.0)"]
 
 [[package]]
+name = "environ"
+version = "1.0"
+description = "Stack Based Globals Management"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "idna"
 version = "3.6"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -528,7 +536,7 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c79e1f680ecbb99da37d3b6cd5aff4808ab0289b5644819c9a533682cb5c3553"
+content-hash = "310b4efe9a6beda9db95c46f07be5ddbbed66a25a916ec17984fccc53af319ad"
 
 [metadata.files]
 asgiref = []
@@ -549,6 +557,7 @@ djangorestframework = []
 djangorestframework-simplejwt = []
 djoser = []
 drf-yasg = []
+environ = []
 idna = []
 inflection = []
 itypes = []

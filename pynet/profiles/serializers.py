@@ -27,7 +27,7 @@ class GetUserNetPublicSerializer(serializers.ModelSerializer):
         model = UserNet
         exclude = (
             "email",
-            "phone",
+            "phone_number",
             "password",
             "last_login",
             "is_active",
