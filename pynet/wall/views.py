@@ -31,7 +31,7 @@ class PostView(CreateRetrieveUpdateDestroy):
 
 
 class CommentsView(CreateUpdateDestroy):
-    """ CRUD комментариев к запси
+    """ CRUD comments for post
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Comment.objects.all()
