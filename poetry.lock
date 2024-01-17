@@ -40,6 +40,31 @@ optional = false
 python-versions = ">=3.7.0"
 
 [[package]]
+name = "coreapi"
+version = "2.3.3"
+description = "Python client library for Core API."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+coreschema = "*"
+itypes = "*"
+requests = "*"
+uritemplate = "*"
+
+[[package]]
+name = "coreschema"
+version = "0.0.4"
+description = "Core Schema."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+jinja2 = "*"
+
+[[package]]
 name = "cryptography"
 version = "41.0.7"
 description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
@@ -84,6 +109,60 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-cors-headers"
+version = "4.3.1"
+description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+asgiref = ">=3.6"
+Django = ">=3.2"
+
+[[package]]
+name = "django-js-asset"
+version = "2.2.0"
+description = "script tag with additional attributes for django.forms.Media"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+django = ">=3.2"
+
+[package.extras]
+tests = ["coverage"]
+
+[[package]]
+name = "django-mptt"
+version = "0.15.0"
+description = "Utilities for implementing Modified Preorder Tree Traversal with your Django Models and working with trees of Model instances."
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.dependencies]
+django-js-asset = "*"
+
+[package.extras]
+tests = ["coverage", "mock-django"]
+
+[[package]]
+name = "django-rest-swagger"
+version = "2.2.0"
+description = "Swagger UI for Django REST Framework 3.5+"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+coreapi = ">=2.3.0"
+djangorestframework = ">=3.5.4"
+openapi-codec = ">=1.3.1"
+simplejson = "*"
 
 [[package]]
 name = "django-templated-mail"
@@ -145,12 +224,79 @@ djet = ["djet (>=0.3.0,<0.4.0)"]
 webauthn = ["webauthn (<1.0)"]
 
 [[package]]
+name = "drf-yasg"
+version = "1.21.7"
+description = "Automated generation of real Swagger/OpenAPI 2.0 schemas from Django Rest Framework code."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+django = ">=2.2.16"
+djangorestframework = ">=3.10.3"
+inflection = ">=0.3.1"
+packaging = ">=21.0"
+pytz = ">=2021.1"
+pyyaml = ">=5.1"
+uritemplate = ">=3.0.0"
+
+[package.extras]
+coreapi = ["coreapi (>=2.3.3)", "coreschema (>=0.0.4)"]
+validation = ["swagger-spec-validator (>=2.1.0)"]
+
+[[package]]
+name = "environ"
+version = "1.0"
+description = "Stack Based Globals Management"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "idna"
 version = "3.6"
 description = "Internationalized Domain Names in Applications (IDNA)"
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "inflection"
+version = "0.5.1"
+description = "A port of Ruby on Rails inflector to Python"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
+name = "itypes"
+version = "1.2.0"
+description = "Simple immutable types for python."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "jinja2"
+version = "3.1.2"
+description = "A very fast and expressive template engine."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+MarkupSafe = ">=2.0"
+
+[package.extras]
+i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "markupsafe"
+version = "2.1.3"
+description = "Safely add untrusted strings to HTML/XML markup."
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "oauthlib"
@@ -164,6 +310,25 @@ python-versions = ">=3.6"
 rsa = ["cryptography (>=3.0.0)"]
 signals = ["blinker (>=1.4.0)"]
 signedtoken = ["cryptography (>=3.0.0)", "pyjwt (>=2.0.0,<3)"]
+
+[[package]]
+name = "openapi-codec"
+version = "1.3.2"
+description = "An OpenAPI codec for Core API."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+coreapi = ">=2.2.0"
+
+[[package]]
+name = "packaging"
+version = "23.2"
+description = "Core utilities for Python packages"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "pillow"
@@ -235,6 +400,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "pyyaml"
+version = "6.0.1"
+description = "YAML parser and emitter for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "requests"
 version = "2.31.0"
 description = "Python HTTP for Humans."
@@ -266,6 +439,14 @@ requests = ">=2.0.0"
 
 [package.extras]
 rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
+
+[[package]]
+name = "simplejson"
+version = "3.19.2"
+description = "Simple, fast, extensible JSON encoder/decoder for Python"
+category = "main"
+optional = false
+python-versions = ">=2.5, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "social-auth-app-django"
@@ -332,6 +513,14 @@ optional = false
 python-versions = ">=2"
 
 [[package]]
+name = "uritemplate"
+version = "4.1.1"
+description = "Implementation of RFC 6570 URI Templates"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "urllib3"
 version = "2.1.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -347,33 +536,50 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "e441174b1b56704d52336004abb624f16a3c676d7232d5b9dc038e78fe3299d5"
+content-hash = "310b4efe9a6beda9db95c46f07be5ddbbed66a25a916ec17984fccc53af319ad"
 
 [metadata.files]
 asgiref = []
 certifi = []
 cffi = []
 charset-normalizer = []
+coreapi = []
+coreschema = []
 cryptography = []
 defusedxml = []
 django = []
+django-cors-headers = []
+django-js-asset = []
+django-mptt = []
+django-rest-swagger = []
 django-templated-mail = []
 djangorestframework = []
 djangorestframework-simplejwt = []
 djoser = []
+drf-yasg = []
+environ = []
 idna = []
+inflection = []
+itypes = []
+jinja2 = []
+markupsafe = []
 oauthlib = []
+openapi-codec = []
+packaging = []
 pillow = []
 psycopg2-binary = []
 pycparser = []
 pyjwt = []
 python3-openid = []
 pytz = []
+pyyaml = []
 requests = []
 requests-oauthlib = []
+simplejson = []
 social-auth-app-django = []
 social-auth-core = []
 sqlparse = []
 typing-extensions = []
 tzdata = []
+uritemplate = []
 urllib3 = []
