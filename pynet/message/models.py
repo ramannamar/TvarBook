@@ -4,6 +4,8 @@ from django.utils import timezone
 
 
 class Chat(models.Model):
+    """Chat model
+    """
     members = models.ManyToManyField(get_user_model(), verbose_name="Member", related_name="chats")
     created_at = models.DateTimeField(default=timezone.now)
 
@@ -21,6 +23,8 @@ class Chat(models.Model):
 
 
 class Message(models.Model):
+    """ Message model
+    """
     chat = models.ForeignKey(Chat, verbose_name="Chat", related_name="messages", on_delete=models.CASCADE)
     user = models.ForeignKey(get_user_model(), verbose_name="User", on_delete=models.CASCADE)
     content = models.TextField(max_length=300, default=True)

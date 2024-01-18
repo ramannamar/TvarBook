@@ -28,11 +28,14 @@ class UserNetView(ModelViewSet):
 
 class RegisterUserView(generics.CreateAPIView):
     serializer_class = RegisterUserSerializer
-
+    """Serializer for password hashing
+    """
     def perform_create(self, serializer):
         password = make_password(self.request.data['password'])
         serializer.save(password=password)
 
+    """ for registration
+    """
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():

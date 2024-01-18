@@ -3,6 +3,8 @@ from .models import UserNet
 
 
 class RegisterUserSerializer(serializers.ModelSerializer):
+    """For registration
+    """
     class Meta:
         model = UserNet
         fields = ('username', 'password', 'email')
