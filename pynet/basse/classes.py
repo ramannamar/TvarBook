@@ -24,7 +24,7 @@ class CreateUpdateDestroy(mixins.CreateModelMixin,
                             mixins.DestroyModelMixin,
                             MixedPermission,
                             viewsets.GenericViewSet):
-    """
+    """provides a view that supports operations for creating, updating, and deleting model objects.
     """
     pass
 
@@ -35,6 +35,6 @@ class CreateRetrieveUpdateDestroy(mixins.CreateModelMixin,
                                     mixins.DestroyModelMixin,
                                     MixedPermission,
                                     viewsets.GenericViewSet):
-    """
+    """provides a view that supports operations for creating, retrieving, updating, and deleting model objects.
     """
     pass
