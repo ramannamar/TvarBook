@@ -1,8 +1,11 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework import permissions
-
+from rest_framework import permissions, generics
+from rest_framework.response import Response
 from .models import UserNet
-from .serializers import GetUserNetSerializer, GetUserNetPublicSerializer
+from .serializers import GetUserNetSerializer, GetUserNetPublicSerializer, RegisterUserSerializer
+from rest_framework import generics
+from django.contrib.auth.hashers import make_password
+from .serializers import RegisterUserSerializer
 
 
 class UserNetPublicView(ModelViewSet):
@@ -21,3 +24,23 @@ class UserNetView(ModelViewSet):
 
     def get_queryset(self):
         return UserNet.objects.filter(id=self.request.user.id)
+
+
+class RegisterUserView(generics.CreateAPIView):
+    serializer_class = RegisterUserSerializer
+
+    def perform_create(self, serializer):
+        password = make_password(self.request.data['password'])
+        serializer.save(password=password)
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            self.perform_create(serializer)
+            return Response({'message': 'Registration successful'}, status=201)
+        else:
+            return Response(serializer.errors, status=400)
+
+
+
+

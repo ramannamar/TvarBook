@@ -2,6 +2,12 @@ from rest_framework import serializers
 from .models import UserNet
 
 
+class RegisterUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserNet
+        fields = ('username', 'password', 'email')
+
+
 class GetUserNetSerializer(serializers.ModelSerializer):
     """ Displaying user information
     """
